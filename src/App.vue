@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <search/>
+    <hello-world/>
   </div>
 </template>
 
 <script>
 import Search from './components/Search.vue'
+import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
+
   components: {
-    Search
+    Search,
+    HelloWorld
   }
 }
 </script>

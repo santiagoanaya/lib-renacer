@@ -35,6 +35,44 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      checkin: {
+        name: "",
+        question: "",
+        answers: [
+          {
+            measurement: "green",
+            type: "text",
+            content: ""
+          }
+        ],
+        periodization: {
+          type: "range",
+          days: [],
+          fromDay: "",
+          toDay: "",
+          hours: [],
+          shouldAlert: false
+        }
+      }
+    };
+  },
+
+  created() {
+    /* var url = "https://api.mercadolibre.com/sites/MLA/search?nickname=IGNACIO%20CECCHINI&q=Harry"
+    request({
+        url: url,
+        json: true
+    }, function (error, response, body) {
+
+        if (!error && response.statusCode === 200) {
+            console.log(body) // Print the json response
+            console.log('BODY', this.periodization)
+        }
+    }) */
+    console.log('BODY', this.periodization)
   }
 }
 </script>
