@@ -1,15 +1,20 @@
 <template>
-  <div id="app">  
-    <Navbar/>
-    </div>
+  <div id="app">
+    <navbar/>
+    <search/>
+  </div>
 </template>
 
 <script>
+import Search from './components/Search.vue'
 import Navbar from './components/Navbar.vue'
+
 export default {
   name: 'app',
+
   components: {
-    Navbar,
+    Search,
+    Navbar
   }
 }
 </script>
