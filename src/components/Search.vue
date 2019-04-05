@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <form action="">
-      <input type="search" v-model="searchingParameter">
+      <input type="search" @keyup.enter="search" v-model="searchingParameter">
       <i class="fa fa-search" @click="search"></i>
     </form>
     <!-- <div v-for="r in this.results" :key="r.title">
@@ -29,11 +29,10 @@
               <div class="h-bg-inner"></div>
             </div>
 
-            <a class="cart" href="#">
+            <a class="cart" :href="r.permalink">
               <span class="price">$ {{r.price}}</span>
               <span class="add-to-cart">
                 <span class="txt">Comprar</span>
-                  <a :href="r.permalink">COMPRAR</a>
               </span>
             </a>
           </div>
