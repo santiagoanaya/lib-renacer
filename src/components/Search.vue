@@ -1,45 +1,43 @@
 <template>
-  <div class="hello">
+  <div>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <form action="">
+    <div class="search-bar">
       <input type="search" @keyup.enter="search" v-model="searchingParameter">
       <i class="fa fa-search" @click="search"></i>
-    </form>
-    <!-- <div v-for="r in this.results" :key="r.title">
-      <b>{{r.title}}</b>
-    </div> -->
+    </div>
+
     <div class="container page-wrapper">
-    <div class="page-inner" v-for="r in this.results" :key="r.title">
-      <div class="row" >
-        <div class="el-wrapper">
-          <div class="box-up">
-            <img class="img" :src= r.thumbnail alt="">
-            <div class="img-info">
-              <div class="info-inner">
-                <span class="p-name">{{r.title}}</span>
-                <span class="p-company">{{r.attributes[0].value_name}}</span>
+      <div class="page-inner" v-for="r in this.results" :key="r.title">
+        <div class="row">
+          <div class="el-wrapper">
+            <div class="box-up">
+              <img class="img" :src= r.thumbnail alt="" width="150px">
+              <div class="img-info">
+                <div class="info-inner">
+                  <span class="p-name">{{r.title}}</span>
+                  <span class="p-company">{{r.attributes[0].value_name}}</span>
+                </div>
+                <!-- <div class="a-size">Available sizes : <span class="size">S , M , L , XL</span></div> -->
               </div>
-              <!-- <div class="a-size">Available sizes : <span class="size">S , M , L , XL</span></div> -->
-            </div>
-          </div>
-
-          <div class="box-down">
-            <div class="h-bg">
-              <div class="h-bg-inner"></div>
             </div>
 
-            <a class="cart" :href="r.permalink">
-              <span class="price">$ {{r.price}}</span>
-              <span class="add-to-cart">
-                <span class="txt">Comprar</span>
-              </span>
-            </a>
+            <div class="box-down" v-if="r.price">
+              <div class="h-bg">
+                <div class="h-bg-inner"></div>
+              </div>
+
+              <a class="cart" :href="r.permalink">
+                <span class="price">$ {{r.price}}</span>
+                <span class="add-to-cart">
+                  <span class="txt">Comprar</span>
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -66,7 +64,20 @@ export default {
         url: url,
         json: true
       }, (error, response, body) => {
-      this.results = body.results
+        if (!error && response.statusCode === 200 && body.results.length > 0) {
+          this.results = body.results
+        }
+        else {
+          this.results = [{
+            title: 'No se han encontrado resultados para tu busqueda',
+            thumbnail: '',
+            /* agregar un icono de error o cara triste */
+            attributes: [{value_name:''}],
+            permalink: '',
+            price: ''
+            }]
+          console.log(this.results)
+        }
       })
     }
   }
@@ -74,21 +85,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/* h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-} */
-
 /* CARDS */
 body,
 html {
@@ -123,12 +119,15 @@ body {
 
 .page-wrapper {
   height: 100%;
-  display: table;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 10%
 }
 
 .page-wrapper .page-inner {
   display: table-cell;
   vertical-align: middle;
+  padding: 5px;
 }
 
 .el-wrapper {
@@ -136,6 +135,7 @@ body {
   padding: 15px;
   margin: 15px auto;
   background-color: #fff;
+  border-radius: 25px;
 }
 
 @media (max-width: 991px) {
@@ -377,7 +377,7 @@ body {
     background: #07051a;
 }
 
-form{
+.search-bar{
     position: relative;
     top: 50%;
     left: 50%;
@@ -422,16 +422,16 @@ input{
     transition: all 1s;
 }
 
-form:hover{
+.search-bar:hover{
     width: 200px;
     cursor: pointer;
 }
 
-form:hover input{
+.search-bar:hover input{
     display: block;
 }
 
-form:hover .fa{
+.search-bar:hover .fa{
     background: #07051a;
     color: white;
 }
