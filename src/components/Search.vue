@@ -8,6 +8,7 @@
     </div>
 
     <hollow-dots-spinner
+      class="loader"
       :dot-size="15"
       :dots-num="3"
       :color="'#ffffff'"
@@ -394,6 +395,13 @@ body {
   letter-spacing: 0.045em;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+/* LOADER */
+
+.loader{
+  position: relative;
+  box-sizing: border-box;
 }
 
 /* SEARCH INPUT */
