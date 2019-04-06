@@ -34,7 +34,7 @@
                 <div class="h-bg-inner"></div>
               </div>
 
-              <a class="cart" :href="r.permalink">
+              <a class="cart" :href="r.permalink" target="BLANK">
                 <span class="price">$ {{r.price}}</span>
                 <span class="add-to-cart">
                   <span class="txt">Comprar</span>
@@ -72,14 +72,13 @@ export default {
 
   methods: {
     search () {
+      this.isLoading = true
       const options = {
           uri: `https://api.mercadolibre.com/sites/MLA/search?nickname=IGNACIO%20CECCHINI&q=${this.searchingParameter}`,
           json: true
       }
-
       rp(options)
         .then((body) => {
-          this.isLoading = true
           if (body.results.length > 0) {
             this.results = body.results
           }
@@ -96,6 +95,14 @@ export default {
         })
         .catch((error) => {
             console.log(error)
+            this.results = [{
+            title: 'No se han encontrado resultados para tu busqueda',
+            thumbnail: 'https://banner2.kisspng.com/20180716/qiq/kisspng-computer-icons-symbol-error-error-icon-5b4c4c02622396.182400931531726850402.jpg',
+            /* agregar un icono de error o cara triste */
+            attributes: [{value_name:''}],
+            permalink: '',
+            price: ''
+            }]
         })
         .finally(() => {
           this.isLoading = false
