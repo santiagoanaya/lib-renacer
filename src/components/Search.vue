@@ -7,7 +7,14 @@
       <i class="fa fa-search" @click="search"></i>
     </div>
 
-    <div class="container page-wrapper">
+    <hollow-dots-spinner
+      :dot-size="15"
+      :dots-num="3"
+      :color="'#ffffff'"
+      v-if="isLoading"
+      />
+
+    <div class="container page-wrapper" v-else>
       <div class="page-inner" v-for="r in this.results" :key="r.title">
         <div class="row">
           <div class="el-wrapper">
@@ -42,15 +49,21 @@
 </template>
 
 <script>
-const request = require("request")
+import { HollowDotsSpinner } from 'epic-spinners'
+const rp = require('request-promise');
 
 export default {
-  name: 'Home',
+  name: 'Search',
+
+  components: {
+    HollowDotsSpinner
+  },
 
   data() {
     return {
       searchingParameter: "",
-      results: []
+      results: [],
+      isLoading: false
     };
   },
 
@@ -59,26 +72,34 @@ export default {
 
   methods: {
     search () {
-      const url = `https://api.mercadolibre.com/sites/MLA/search?nickname=IGNACIO%20CECCHINI&q=${this.searchingParameter}`
-      request({
-        url: url,
-        json: true
-      }, (error, response, body) => {
-        if (!error && response.statusCode === 200 && body.results.length > 0) {
-          this.results = body.results
-        }
-        else {
+      const options = {
+          uri: `https://api.mercadolibre.com/sites/MLA/search?nickname=IGNACIO%20CECCHINI&q=${this.searchingParameter}`,
+          json: true
+      }
+
+      rp(options)
+        .then((body) => {
+          this.isLoading = true
+          if (body.results.length > 0) {
+            this.results = body.results
+          }
+          else {
           this.results = [{
             title: 'No se han encontrado resultados para tu busqueda',
-            thumbnail: '',
+            thumbnail: 'https://banner2.kisspng.com/20180716/qiq/kisspng-computer-icons-symbol-error-error-icon-5b4c4c02622396.182400931531726850402.jpg',
             /* agregar un icono de error o cara triste */
             attributes: [{value_name:''}],
             permalink: '',
             price: ''
             }]
-          console.log(this.results)
-        }
-      })
+          }
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+        .finally(() => {
+          this.isLoading = false
+        })
     }
   }
 }
