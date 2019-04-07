@@ -1,21 +1,14 @@
 <template>
   <nav>
     <div class="menu-container">
-      <!-- Menu -->
       <ul class="menu">
         <li class="menu-apple" style="padding-top:2.8%">
           <img src="http://www.renacerlibreria.com/wp-content/uploads/2019/03/cropped-LOGO.jpg" width="100" height="50" alt="Computer Hope" >
         </li>
         <li class="menu-mac" style="margin-bottom:3%">
-          <!-- <a href="#">
-            <span>Inicio</span>
-          </a> -->
           <router-link to="/">Inicio</router-link>
         </li>
         <li class="menu-mac" style="margin-bottom:3%">
-          <!-- <a href="#">
-            <span>Contacto</span>
-          </a> -->
           <router-link to="/contacto">Contacto</router-link>
         </li>
         <li class="menu-mac" style="margin-bottom:3%">
