@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 style="background-image:linear-gradient(to right, rgb(70, 172, 206), rgb(88, 175, 189));">Compra el libro que quieras y te lo enviamos donde sea que estes</h1>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <div class="search-bar">
@@ -34,7 +35,6 @@
               <div class="h-bg">
                 <div class="h-bg-inner"></div>
               </div>
-
               <a class="cart" :href="r.permalink" target="BLANK">
                 <span class="price">$ {{r.price}}</span>
                 <span class="add-to-cart">
@@ -119,6 +119,7 @@ body,
 html {
   height: 100%;
 }
+
 
 .d-flex {
   display: -webkit-box;

@@ -2,19 +2,18 @@
   <nav>
     <div class="menu-container">
       <ul class="menu">
-        <li class="menu-apple" style="padding-top:2.8%">
-          <img src="http://www.renacerlibreria.com/wp-content/uploads/2019/03/cropped-LOGO.jpg" width="100" height="50" alt="Computer Hope" >
+        <li class="menu-apple" style="padding-top:2.8%;padding-right:12%">
+          <router-link to="/"><img src="http://www.renacerlibreria.com/wp-content/uploads/2019/03/cropped-LOGO.jpg" width="89.2" height="69.5" alt="Computer Hope" >
+          </router-link>
         </li>
-        <li class="menu-mac" style="margin-bottom:3%">
+        <li class="menu-mac" style="margin-bottom:3%;margin-left:0;">
           <router-link to="/">Inicio</router-link>
         </li>
-        <li class="menu-mac" style="margin-bottom:3%">
+        <li class="menu-mac" style="margin-bottom:3%;padding-right:20%;">
           <router-link to="/contacto">Contacto</router-link>
         </li>
-        <li class="menu-mac" style="margin-bottom:3%">
-          <a href="tel: 1136485582">
-            <span>Teléfono: 11 3648-5582</span>
-          </a>
+        <li class="menu-mac" style="margin-bottom:3%;margin-left:-15%;">
+            <span><a>Los libros que buscas donde sea que estes</a></span>
         </li>
       </ul>
     </div>
@@ -33,11 +32,6 @@ export default {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-}
-
-html {
-  height: 100%;
-  box-sizing: border-box;
 }
 
 body {
@@ -350,18 +344,24 @@ nav {
   top: 0;
   right: 0;
   left: 0;
-  height: 48px;
+  height: 11%;
   min-width: 1024px;
   background: rgb(255, 255, 255);
   font-size: 18px;
   z-index: 2;
+   -webkit-box-shadow: 0 4px 4px -2px #000000;
+   -moz-box-shadow: 0 4px 4px -2px #000000;
+        box-shadow: 0 4px 4px -2px #000000;
 }
 
 .menu-container {
   position: relative;
   margin: 0 auto;
+  align-items: left;
   max-width: 1000px;
-  padding: 0 23px;
+  padding: 0 25px;
+ 
+  
 }
 .menu-container ul {
   list-style: none;
@@ -397,6 +397,7 @@ nav {
   width: 30px;
   margin-top: 10x;
   padding-top:2px;
+  align:left;
 }
 
 .menu-container.menu-mac {

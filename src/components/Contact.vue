@@ -7,24 +7,33 @@
                         <div class="single-cta">
                             <i class="fas fa-map-marker-alt"></i>
                             <div class="cta-text" style="margin-bottom:2%;">
-                                <h4 style="color:black;margin-top:7%;">Ubicacion</h4>
-                                <span>Mariano Acha 2593, CABA, Argentina</span>
+                                <h4 style="color:black;margin-top:7%;">Ubicación</h4>
+                                <span>Mariano Acha 2593, Saavedra, Argentina</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-md-4 mb-30" style="margin-bottom:2%;">
                         <div class="single-cta">
                             <div class="cta-text">
-                                <h4 style="color:black;">Telefono </h4>
-                                <span> 011 3648-5582</span>
+                                <h4 style="color:black;">Teléfono </h4>
+                                <span> 15-3648-5582</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-md-4 mb-30" style="margin-bottom:2%;">
                         <div class="single-cta">
                             <div class="cta-text" style="margin-bottom:5%">
-                               <h4 style="color:black;margin-bottom:-3%">Mail</h4>
+                               <h4 style="color:black;margin-bottom:-3%">Email</h4>
                                 <span>info@renacerlibreria.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30" style="margin-bottom:2%;">
+                        <div class="single-cta">
+                            <div class="cta-text" style="margin-bottom:5%">
+                               <h4 style="color:black;margin-bottom:-3%">Horarios</h4>
+                                <span>Lun - Vie: 9-13/15-20</span><br>
+                                <span>Sabados: 15-20</span>
                             </div>
                         </div>
                     </div>
