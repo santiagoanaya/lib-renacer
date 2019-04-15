@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1 style="background-image:linear-gradient(to right, rgb(70, 172, 206), rgb(88, 175, 189));">Compra el libro que quieras y te lo enviamos donde sea que estes</h1>
+    <h1 style="background-image:linear-gradient(to right, rgb(70, 172, 206), rgb(88, 175, 189));">Comprá el libro que quieras y te lo enviamos donde sea que estés</h1>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <div class="search-bar">
-      <input type="search" @keyup.enter="search" v-model="searchingParameter">
+      <input type="search" @keyup.enter="search" v-model.lazy="searchingParameter" v-debounce="700" placeholder="Busque su libro">
       <i class="fa fa-search" @click="search"></i>
     </div>
 
@@ -51,6 +51,7 @@
 
 <script>
 import { HollowDotsSpinner } from 'epic-spinners'
+import debounce from 'v-debounce'
 const rp = require('request-promise');
 
 export default {
@@ -58,6 +59,10 @@ export default {
 
   components: {
     HollowDotsSpinner
+  },
+  directives: { debounce },
+
+  props: {
   },
 
   data() {
@@ -68,7 +73,17 @@ export default {
     };
   },
 
-  created() {
+  mounted() {
+    this.$root.$on('reset', data => {
+      console.log(data)
+      this.results = []
+    })
+  },
+
+  watch: {
+    searchingParameter() {
+      this.search()
+    }
   },
 
   methods: {

@@ -2,7 +2,7 @@
   <nav>
     <div class="menu-container">
       <ul class="menu">
-        <li class="menu-apple" style="padding-top:2.8%;padding-right:12%">
+        <li class="menu-apple" style="padding-top:2.8%;padding-right:12%" @click="reset">
           <router-link to="/"><img src="http://www.renacerlibreria.com/wp-content/uploads/2019/03/cropped-LOGO.jpg" width="89.2" height="69.5" alt="Computer Hope" >
           </router-link>
         </li>
@@ -13,7 +13,7 @@
           <router-link to="/contacto">Contacto</router-link>
         </li>
         <li class="menu-mac" style="margin-bottom:3%;margin-left:-15%;">
-            <span><a>Los libros que buscas donde sea que estes</a></span>
+            <span><a>Los libros que buscás donde sea que estés</a></span>
         </li>
       </ul>
     </div>
@@ -24,6 +24,12 @@
 
 export default {
   name: 'Navbar',
+
+  methods: {
+    reset() {
+      this.$root.$emit('reset')
+    }
+  }
 }
 </script>
 
@@ -360,8 +366,8 @@ nav {
   align-items: left;
   max-width: 1000px;
   padding: 0 25px;
- 
-  
+
+
 }
 .menu-container ul {
   list-style: none;
