@@ -16,7 +16,6 @@
     "request-promise": "^4.2.4",
     "v-debounce": "^0.1.2",
     "vue": "^2.6.6",
-    "vue-awesome": "^3.5.1",
     "vue-router": "^3.0.2"
   },
   "devDependencies": {
