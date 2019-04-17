@@ -44,7 +44,6 @@
 </template>
 
 <script>
-require("../vue-awesome.js");
 export default {
   name: 'contact'
 }
