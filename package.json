@@ -17,6 +17,7 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "vue": "^2.6.6",
+    "vue-cli": "^2.9.6",
     "vue-router": "^3.0.2"
   },
   "devDependencies": {
