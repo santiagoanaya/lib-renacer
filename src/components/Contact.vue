@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer-section" style="border-radius:5%;margin-right:5%;">
+  <footer class="footer-section" style="border-radius:10%;margin-right:5%;padding:5%;margin-left:5%">
         <div class="container">
             <div class="footer-cta pt-5 pb-5">
                 <div class="row">
@@ -7,33 +7,33 @@
                         <div class="single-cta">
                             <i class="fas fa-map-marker-alt"></i>
                             <div class="cta-text" style="margin-bottom:2%;">
-                                <h4 style="color:black;margin-top:7%;">Ubicación</h4>
-                                <span>Mariano Acha 2593, Saavedra, Argentina</span>
+                                <h4 style="color:black;margin-top:7%;font-size:200%;">Ubicación</h4>
+                                <span style="font-size:120%;">Mariano Acha 2593, Villa Urquiza,CABA, Argentina</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-md-4 mb-30" style="margin-bottom:2%;">
                         <div class="single-cta">
                             <div class="cta-text">
-                                <h4 style="color:black;">Teléfono </h4>
-                                <span> 15-3648-5582</span>
+                                <h4 style="color:black;font-size:200%;">Teléfono </h4>
+                                <span style="font-size:120%;"> 15-3648-5582</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30" style="margin-bottom:2%;">
+                        <div class="single-cta">
+                            <div class="cta-text" style="margin-bottom:5%;">
+                               <h4 style="color:black;margin-bottom:-3%;font-size:200%;">Email</h4>
+                                <span style="font-size:120%;">info@tulibroya.com</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-md-4 mb-30" style="margin-bottom:2%;">
                         <div class="single-cta">
                             <div class="cta-text" style="margin-bottom:5%">
-                               <h4 style="color:black;margin-bottom:-3%">Email</h4>
-                                <span>info@renacerlibreria.com</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-4 mb-30" style="margin-bottom:2%;">
-                        <div class="single-cta">
-                            <div class="cta-text" style="margin-bottom:5%">
-                               <h4 style="color:black;margin-bottom:-3%">Horarios</h4>
-                                <span>Lun - Vie: 9-13/15-20</span><br>
-                                <span>Sabados: 15-20</span>
+                               <h4 style="color:black;margin-bottom:-3%;font-size:200%;">Horarios</h4>
+                                <span style="font-size:120%;">Lunes - Viernes: 9-13/15-20</span><br>
+                                <span style="font-size:120%;">Sabados: 15-20</span>
                             </div>
                         </div>
                     </div>

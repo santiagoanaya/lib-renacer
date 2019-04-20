@@ -1,20 +1,31 @@
 <template>
   <nav>
-    <div class="menu-container">
+    <div class="menu-container" id="menu-desktop">
       <ul class="menu">
-        <li class="menu-apple" style="padding-top:2.8%;padding-right:12%">
-          <router-link to="/"><img src="http://www.renacerlibreria.com/wp-content/uploads/2019/03/cropped-LOGO.jpg" width="89.2" height="69.5" alt="Computer Hope" >
+        <li class="menu-apple" style="margin-top:0%;padding-right:8%;margin-bottom:2%;">
+          <router-link to="/"><img src="https://res.cloudinary.com/dmda0shgb/image/upload/v1555605702/logo_y_texto_costado.png" width="190" height="45"  alt="Logo TuLibroYa" >
           </router-link>
         </li>
-        <li class="menu-mac" style="margin-bottom:3%;margin-left:0;">
-          <router-link to="/">Inicio</router-link>
+          <li class="menu-mac" style="margin-bottom:4%;padding-rigt:20%;margin-top:2%;">
+            <router-link to="/">Inicio</router-link>
+          </li>
+          <li class="menu-mac" style="margin-bottom:4%;padding-rigt:20%;margin-top:2%;">
+            <router-link to="/contacto">Contacto</router-link>
+          </li>
+          <li class="menu-mac" style="margin-bottom:4%;margin-left:5%;margin-right:-5%;margin-top:-2%;font-size:50px;">
+              <span><a>"El libro que buscás donde sea que estés"</a></span>
+          </li>
+      </ul>
+    </div>
+    <div class="menu-container" id="menu-mobile">
+      <ul class="menu">
+        <li class="menu-apple" style="margin-top:-2%;margin-right:-60%;margin-bottom:2%;margin-left:-10%;">
+          <router-link to="/"><img src="https://res.cloudinary.com/dmda0shgb/image/upload/v1555605702/logo_y_texto_costado.png" width="190" height="45"  alt="TuLibroYa" >
+          </router-link>
         </li>
-        <li class="menu-mac" style="margin-bottom:3%;padding-right:20%;">
-          <router-link to="/contacto">Contacto</router-link>
-        </li>
-        <li class="menu-mac" style="margin-bottom:3%;margin-left:-15%;">
-            <span><a>Los libros que buscas donde sea que estes</a></span>
-        </li>
+        <li class="menu-mac" style="margin-bottom:10%;padding-left:45%;margin-top:-10%;">
+            <router-link to="/contacto">Contacto</router-link>
+          </li>
       </ul>
     </div>
   </nav>
@@ -37,7 +48,7 @@ export default {
 body {
   width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(to right, rgb(70, 172, 206), rgb(88, 175, 189));
+  background-image: linear-gradient(to right, #66B1E1, rgb(88, 175, 189));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,6 +142,34 @@ body {
 .search.edge:before {
   opacity: 1;
 }
+
+@media screen and (max-width: 768px) {
+
+#menu-desktop {display: none;}
+
+nav {
+  min-width: 200px;
+}
+
+.menu-container {
+  min-width: 200px;
+}
+
+body{
+  min-width: 200px;
+}
+
+
+}
+
+@media screen and (min-width: 768px) {
+
+#menu-mobile {display: none;}
+
+}
+
+
+
 .search-close {
   position: absolute;
   right: 15px;
@@ -344,8 +383,8 @@ nav {
   top: 0;
   right: 0;
   left: 0;
-  height: 11%;
-  min-width: 1024px;
+  height: 10%;
+  min-width: 100%;
   background: rgb(255, 255, 255);
   font-size: 18px;
   z-index: 2;
@@ -359,7 +398,7 @@ nav {
   margin: 0 auto;
   align-items: left;
   max-width: 1000px;
-  padding: 0 25px;
+  padding: 5 5px;
  
   
 }

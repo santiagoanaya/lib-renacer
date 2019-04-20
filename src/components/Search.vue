@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 style="background-image:linear-gradient(to right, rgb(70, 172, 206), rgb(88, 175, 189));">Compra el libro que quieras y te lo enviamos donde sea que estes</h1>
+    <h1 style="background-image:linear-gradient(to right, rgb(70, 172, 206), rgb(88, 175, 189));">Elegí el libro que te gusta y recibilo en tu casa</h1>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <div class="search-bar">
@@ -16,7 +16,7 @@
       v-if="isLoading"
       />
 
-    <div class="container page-wrapper" v-else>
+    <div class="container page-wrapper" v-else style="margin-left:2%;">
       <div class="page-inner" v-for="r in this.results" :key="r.title">
         <div class="row">
           <div class="el-wrapper">
@@ -38,7 +38,7 @@
               <a class="cart" :href="r.permalink" target="BLANK">
                 <span class="price">$ {{r.price}}</span>
                 <span class="add-to-cart">
-                  <span class="txt">Comprar</span>
+                  <span class="txt">Detalles</span>
                 </span>
               </a>
             </div>
@@ -75,7 +75,7 @@ export default {
     search () {
       this.isLoading = true
       const options = {
-          uri: `https://api.mercadolibre.com/sites/MLA/search?nickname=IGNACIO%20CECCHINI&q=${this.searchingParameter}`,
+          uri: `https://api.mercadolibre.com/sites/MLA/search?nickname=TU.LIBRO.YA&q=${this.searchingParameter}`,
           json: true
       }
       rp(options)
