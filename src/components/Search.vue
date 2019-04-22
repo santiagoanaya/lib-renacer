@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <h1 style="background-image:linear-gradient(to right, rgb(70, 172, 206), rgb(88, 175, 189));">Elegí el libro que te gusta y recibilo en tu casa</h1>
+  <div class="">
+    <div class="center"></div>
+    <h1 class="title">Elegí el libro que te gusta y recibilo en tu casa</h1>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <div class="search-bar">
@@ -8,15 +9,17 @@
       <i class="fa fa-search" @click="search"></i>
     </div>
 
-    <hollow-dots-spinner
-      class="loader"
-      :dot-size="15"
-      :dots-num="3"
-      :color="'#ffffff'"
-      v-if="isLoading"
-      />
+    <div class="center" v-if="isLoading">
+      <hollow-dots-spinner
+        class="loader"
+        :dot-size="20"
+        :dots-num="5"
+        :color="'#ffffff'"
+        />
+    </div>
 
-    <div class="container page-wrapper" v-else style="margin-left:2%;">
+    <div class="page-wrapper" v-else>
+      <h4 v-if="results">Resultados para: "{{searchingParameter}}"</h4>
       <div class="page-inner" v-for="r in this.results" :key="r.title">
         <div class="row">
           <div class="el-wrapper">
@@ -114,13 +117,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/* CARDS */
 body,
 html {
   height: 100%;
 }
 
+.title {
+  background-image: linear-gradient(to right, rgb(70, 172, 206), rgb(88, 175, 189));
+}
 
+/* CARDS */
 .d-flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -151,7 +157,8 @@ body {
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding-left: 10%
+  padding-left: 10%;
+  margin-left:2%;
 }
 
 .page-wrapper .page-inner {
@@ -405,12 +412,16 @@ body {
   box-sizing: border-box;
 }
 
+.center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
 /* SEARCH INPUT */
 body {
     padding: 0;
     margin: 0;
-    height: 100vh;
-    width: 100%;
     background: #07051a;
 }
 
