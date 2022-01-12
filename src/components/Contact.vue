@@ -157,7 +157,7 @@ ul {
 }
 .footer-widget ul li {
   display: inline-block;
-  float: left;
+  /* float: left; */
   width: 50%;
   margin-bottom: 12px;
 }

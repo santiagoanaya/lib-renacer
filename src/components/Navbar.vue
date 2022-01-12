@@ -425,7 +425,7 @@ nav {
   color: #000000;
   font-weight: 100;
   font-size: 16px;
-  float: right;
+  /* float: right; */
   text-align: right;
 }
 .menu-container ul li a:hover {
@@ -436,7 +436,7 @@ nav {
   width: 30px;
   margin-top: 10x;
   padding-top:2px;
-  align:left;
+  /* align:left; */
 }
 
 .menu-container.menu-mac {

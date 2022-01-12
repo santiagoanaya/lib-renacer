@@ -199,7 +199,7 @@ body {
 }
 
 .el-wrapper:hover .img {
-  webkit-filter: blur(7px);
+  // webkit-filter: blur(7px);
   -o-filter: blur(7px);
   -ms-filter: blur(7px);
   filter: blur(7px);
